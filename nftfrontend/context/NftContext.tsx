@@ -119,7 +119,7 @@ export const NFTProvider = ({ children }: { children: any }) => {
     const fetchNfts = async () => {
         setIsLoadingNft(false);
         const provider = new ethers.JsonRpcProvider(
-            "https://sepolia.drpc.org",
+            process.env.ALCHEMY_URL,
             "sepolia"
         );
         const contract = fetchContract(provider);
